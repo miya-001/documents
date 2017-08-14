@@ -57,10 +57,9 @@
       2. フォントのファイル(*.tff)をドラッグ&ドロップ
 
  2. Cygwin の options で追加したフォントを設定 or .minttyrcに以下を追加
-
-```
-Font=Ricty Diminished
-```
+    ```
+    Font=Ricty Diminished
+    ```
 [edihbrandon/RictyDiminished: Ricty Diminished --- fonts for programming](https://github.com/edihbrandon/RictyDiminished)
 
 ## 4. .zshrc, .minttyrc, .vimrc をDropboxで管理
