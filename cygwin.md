@@ -1,11 +1,11 @@
 # cygwin (+α Visual Studio Code)
 ## 項目
-1. zsh に切替
-2. cyg-fast
-3. フォント変更
-4. .zshrc, .minttyrc, .vimrc をDropboxで管理
-5. Visual Studio Code のターミナルで zsh を使う  
-6. その他便利な使い方
+ 1. zsh に切替
+ 2. cyg-fast
+ 3. フォント変更
+ 4. .zshrc, .minttyrc, .vimrc をDropboxで管理
+ 5. Visual Studio Code のターミナルで zsh を使う  
+ 6. その他便利な使い方
 
 ## 1. zshに切替
  1. zsh インストール
@@ -14,9 +14,9 @@
  2. bash → zsh に変更
      * chere パッケージをインストール
      * ターミナル起動時に以下のように引数を与える
-     ```
-     C:\cygwin64\bin\mintty.exe --window max -e /bin/xhere /bin/zsh.exe "C:\Users\username" -
-     ```
+       ```
+       C:\cygwin64\bin\mintty.exe --window max -e /bin/xhere /bin/zsh.exe "C:\Users\username" -
+       ```
 
 [つるろぐ: Cygwin の ターミナル起動時のディレクトリを変える方法](http://fbe5c7f2.blogspot.jp/2013/10/cygwin.html)
 
@@ -27,9 +27,9 @@
     * tar
     * gawk
  2. ソースを取得
- ```
- % git clone https://github.com/tmshn/cyg-fast
- ```
+    ```
+    % git clone https://github.com/tmshn/cyg-fast
+    ```
  3. cyg-fast を、パスが通っているディレクトリへ移動し、実行権限を付与
     ```
     % cp -p cyg-fast /bin/
@@ -62,51 +62,52 @@
 Font=Ricty Diminished
 ```
 [edihbrandon/RictyDiminished: Ricty Diminished --- fonts for programming](https://github.com/edihbrandon/RictyDiminished)
+
 ## 4. .zshrc, .minttyrc, .vimrc をDropboxで管理
  1. シンボリックリンク作成
-   ```
-   % cd ~
-   % ln -s /path_to_.zshrc .zshrc
-   % ln -s /path_to_.minttyrc .mintty
-   % ln -s /path_to_.vimrc .vimrc
-   ```
+    ```
+    % cd ~
+    % ln -s /path_to_.zshrc .zshrc
+    % ln -s /path_to_.minttyrc .mintty
+    % ln -s /path_to_.vimrc .vimrc
+    ```
 [シンボリックリンクの作成と削除 - Qiita](http://qiita.com/colorrabbit/items/2e99304bd92201261c60)
 
  2. .zshrc, .minttyrc, .vimrc の設定  
- 以下を参考に作成。  
+    以下を参考に作成。  
 [zshは至高の利便性？！Cygwinにzshをインストール＆設定した導入方法まとめ | Futurismo](http://futurismo.biz/archives/1363)  
 [mintty ターミナル上の vim で、モードに応じてカーソル形状を変える - Qiita](http://qiita.com/usamik26/items/f733add9ca910f6c5784)
 
 ## 5. Visual Studio Code のターミナルで zsh を使う
  1. vscode_zsh.batを作成
- ``` 
- @echo off
- set CHERE_INVOKING=1 set MSYSTEM=MINGW64 & C:\\cygwin64\\bin\\zsh.exe --login -i
- ``` 
+    ``` 
+    @echo off
+    set CHERE_INVOKING=1 set MSYSTEM=MINGW64 & C:\\cygwin64\\bin\\zsh.exe --login -i
+    ``` 
  2. Visual Studio Codeを開き、Settingsで以下を追記
-  ```
-  // コンソールをcygwinに変更
-  "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
-  ```
+    ```
+    // コンソールをcygwinに変更
+    "terminal.integrated.shell.windows": "C:\\cygwin64\\Cygwin.bat",
+    ```
 [Visual Studio CodeのIntegrated Terminalでmsys2のzshを使う - 備忘録β版](http://yami-beta.hateblo.jp/entry/2016/06/08/000000)
 
 ## 6. その他便利な使い方
  * Cygwin ⇔ クリップボード
-    * シェル → クリップボード  
-      とにかく、/dev/clipboardに送る
-        ```
-        % cat xxx > /dev/clipboard
-        ```
-    * vim → クリップボード  
-      以下のコマンドでバッファ全体をクリップボードに送る
-        ```
-        :w !cat > /dev/clipboard
-        ```
-      以下のコマンドでビジュアルモードで選択した範囲をクリップボードに送る('<,'>部分は自動中入力される)
-        ```
-        :'<,'>w !cat > /dev/clipboard
-        ```
-    * クリップボードからのペースト  
-    Ctrl-Shift-V または Shift-Ins
+   * シェル → クリップボード  
+     とにかく、/dev/clipboardに送る
+       ```
+       % cat xxx > /dev/clipboard
+       ```
+   * vim → クリップボード  
+     以下のコマンドでバッファ全体をクリップボードに送る
+       ```
+       :w !cat > /dev/clipboard
+       ```
+     以下のコマンドでビジュアルモードで選択した範囲をクリップボードに送る('<,'>部分は自動中入力される)
+       ```
+       :'<,'>w !cat > /dev/clipboard
+       ```
+   * クリップボードからのペースト  
+   Ctrl-Shift-V または Shift-Ins
 
 [cygwin vim でクリップボードを使う - Qiita](http://qiita.com/usamik26/items/f27fef5335752a3e37ec)
