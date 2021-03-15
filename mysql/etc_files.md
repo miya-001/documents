@@ -54,7 +54,7 @@
 ### error.log
     MySQLの開始/停止等、様々なエラーが記録される。
     ```
-    2017-04-23 01:44:11 21935 [ERROR] /usr/local/***/mysql-5.0/bin/mysqld: Incorrect key file for table './***/***.MYI'; try to repair it 
+    2017-04-23 01:44:11 21935 [ERROR] /path/to/mysql/bin/mysqld: Incorrect key file for table './***/***.MYI'; try to repair it 
     ```
 
 ### slow.log
@@ -66,7 +66,7 @@
 #### my.iniに以下を追記  
   ```ini
   general_log = 1
-  general_log_file = /usr/local/cybozu/mysql*5.0/data/query.log
+  general_log_file = /path/to/mysql/data/query.log
   ```
 ### バイナリログ
    レプリケーションの時に使う。
